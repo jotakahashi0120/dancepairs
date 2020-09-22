@@ -1,5 +1,14 @@
 ja:
   activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      username: ニックネーム
+      email: メールアドレス
+      gender: 性別
+      prefecture: 都道府県
+      profile: プロフィール
+      profile_image: プロフィール画像
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

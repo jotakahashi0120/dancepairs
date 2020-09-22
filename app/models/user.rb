@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          
+  validates :username, presence: true
+         
   attachment :profile_image
   
   enum gender: { リーダー: 1, パートナー: 2 }
