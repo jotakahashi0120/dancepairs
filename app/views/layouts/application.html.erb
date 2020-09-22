@@ -10,15 +10,11 @@
   </head>
   <body>
     <% if flash[:notice] %>
-      <div class="alert alert-primary" role="alert">
-        <p class="notice"><%= notice %></p>
-      </div>
+      <%= render 'layouts/flashes' %>
     <% end %>
     
     <% if flash[:alert] %>
-      <div class="alert alert-danger" role="alert">
-        <p class="alert"><%= alert %></p>
-      </div>
+      <%= render 'layouts/flashes' %>
     <% end %>
     
     <%= yield %>
