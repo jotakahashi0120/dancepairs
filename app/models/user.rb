@@ -6,7 +6,7 @@ class User < ApplicationRecord
          
   attachment :profile_image
   
-  enum gender: { man: 1, woman: 2 }
+  enum gender: { リーダー: 1, パートナー: 2 }
   
   enum prefecture: {
      "---":0,

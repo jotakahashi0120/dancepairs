@@ -1,10 +1,10 @@
 <h1 class="text-center">ユーザー編集</h1>
 <section class="jumbotron text-center">
   <div class="container">
-    <%= form_with model: @user do |f| %>
+    <%= form_with model: @user, local: true do |f| %>
       <div class="field">
         <%= f.label :username, "ニックネーム" %><br />
-        <%= f.email_field :username, autofocus: true, autocomplete: "username", class: "form-control" %>
+        <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "form-control" %>
       </div>
       <div class="field">
         <%= f.label :email, "メールアドレス" %><br />
@@ -20,10 +20,7 @@
       </div>
       <div class="field">
         <%= f.label :gender, "性別" %><br />
-        <%= f.label :man, "リーダー" %>
-        <%= f.radio_button :gender, :man %>
-        <%= f.label :woman, "パートナー" %>
-        <%= f.radio_button :gender, :woman %>
+        <%= f.select :gender, User.genders.keys, {prompt: '選択してください'}, class: "form-control" %>
       </div>
       <div class="field">
         <%= f.label :prefecture, "住所" %><br />
