@@ -28,6 +28,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find_by(id: params[:id])
     if @user.update_attributes(user_params)
+      sign_in(@user, bypass: true)
       redirect_to user_path(@user), notice: '更新しました！'
     else
       render :edit
