@@ -17,10 +17,10 @@ body {
 }
 
 .form-signin {
-    width: 100%;
-    max-width: 330px;
-    padding: 15px;
-    margin: auto;
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
 }
 
 .actions {
@@ -51,5 +51,27 @@ body {
 
 #logo:hover {
   color: #333;
+  text-decoration: none;
+}
+
+.jumbotron {
+  width: 100%;
+  max-width: 500px;
+  padding: 15px;
+  margin: auto;
+}
+
+.jumbotron .container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.linkto {
+  text-decoration: none;
+}
+
+.linkto:hover {
   text-decoration: none;
 }
