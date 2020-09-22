@@ -9,6 +9,9 @@ gem 'turbolinks',     '5.2.0'
 gem 'jbuilder',       '2.9.1'
 gem 'bootsnap',       '1.4.5', require: false
 gem 'bootstrap-sass', '3.4.1'
+gem 'devise'
+gem 'refile', require: "refile/rails", github: "manfe/refile"
+gem 'refile-mini_magick'
 
 group :development, :test do
   gem 'sqlite3', '1.4.1'
