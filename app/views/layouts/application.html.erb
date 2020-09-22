@@ -8,8 +8,19 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <% if flash[:notice] %>
+      <div class="alert alert-primary" role="alert">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end %>
+    
+    <% if flash[:alert] %>
+      <div class="alert alert-danger" role="alert">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
+    
     <%= yield %>
   </body>
 </html>
