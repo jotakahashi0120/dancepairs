@@ -1,4 +1,13 @@
 <h1 class="text-center">ユーザー一覧</h1>
+<div class="text-center" id="search">
+  <%= form_tag(users_path, method: "get") do %>
+  <%= label_tag :gender, "性別" %>
+  <%= select_tag :gender, options_for_select(User.genders), include_blank: true %>
+  <%= label_tag :prefecture, "住所" %>
+  <%= select_tag :prefecture, options_for_select(User.prefectures), include_blank: true %>
+  <%= submit_tag "検索" %>
+  <% end %>
+</div>
 <section class="jumbotron text-center">
   <div class="container">
     <% @users.each do |user| %>

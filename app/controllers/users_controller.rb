@@ -4,6 +4,14 @@ class UsersController < ApplicationController
   
   def index
     @users = User.all.order(updated_at: :desc)
+    # パラメータとして性別を受け取っている場合は絞って検索する
+    if params[:gender].present?
+      @users = @users.get_by_gender params[:gender]
+    end
+    # パラメータとして住所を受け取っている場合は絞って検索する
+    if params[:prefecture].present?
+      @users = @users.get_by_prefecture params[:prefecture]
+    end
   end
 
   def show
@@ -19,7 +27,7 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find_by(id: params[:id])
-    if @user.update(user_params)
+    if @user.update_attributes(user_params)
       redirect_to user_path(@user), notice: '更新しました！'
     else
       render :edit
