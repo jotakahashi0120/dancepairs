@@ -1,24 +1,31 @@
-# README
+# Name
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ダンスペアズ
+ダンスペアズは、社交ダンス(競技ダンス)のリーダー・パートナーを見つけるアプリです。
 
-Things you may want to cover:
+# Features
 
-* Ruby version
+従来の社交ダンスリーダーパートナー掲示板は、検索や絞り込みの機能には長けているものの、それ故の使いづらさも否めません。
+また、ページがごちゃごちゃしていて使いにくいと感じます。
 
-* System dependencies
+ダンスペアズは、直感的に・簡単に・素早くダンスパートナーを見つけることができます。
 
-* Configuration
+# Requirement
 
-* Database creation
+* ruby 2.6.3p62 [x86_64-linux]
+* Rails 6.0.3
 
-* Database initialization
+# Note
 
-* How to run the test suite
+* ・メッセージを送る機能が未実装です。次のアップデートで実装します。
+* ・ユーザー情報を更新する際にログアウトされてしまうため、再度ログインしてください。次のアップデートで改善します。
 
-* Services (job queues, cache servers, search engines, etc.)
+# Author
 
-* Deployment instructions
+* 作成者  高橋青
+* 所属    青山学院大学理工学部経営システム工学科
+* E-mail  jo.takahashi.0120@gmail.com
 
-* ...
+# License
+
+© 2020 ダンスペアズ All Rights Reserved.
