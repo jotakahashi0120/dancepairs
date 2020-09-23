@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    
     # roomがcreateされた時に、現在ログインしているユーザーと、
     # 「チャットへ」を押されたユーザーの両方をEntriesテーブルに記録する必要がある
     
