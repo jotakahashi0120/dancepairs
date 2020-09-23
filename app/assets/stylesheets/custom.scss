@@ -91,14 +91,6 @@ body {
 
 // ユーザー一覧ここから
 
-.linkto {
-  text-decoration: none;
-}
-
-.linkto:hover {
-  text-decoration: none;
-}
-
 #search {
   margin-top: 30px;
   margin-bottom: 10px;
@@ -116,6 +108,11 @@ body {
 .jumbotron-cover {
   margin: 0 auto;
   width: 90%;
+}
+
+.linkto {
+  text-decoration: none;
+  color: 000;
 }
 
 // ユーザー一覧ここまで
