@@ -4,6 +4,11 @@
 
 # DEMO
 
+![トップページ](.app/assets/images/dancepairs-top.jpg)
+![ユーザー一覧ページ](.app/assets/images/dancepairs-index.jpg)
+![ユーザー詳細ページ](.app/assets/images/dancepairs-user-show.jpg)
+![ログインページ](.app/assets/images/dancepairs-login.jpg)
+
 # Features
 
 ダンスペアズは、社交ダンスのリーダー・パートナーを見つけるアプリです。
@@ -15,6 +20,7 @@
 * 基本的なログイン・ログアウト機能
 * ユーザー一覧の検索機能(絞り込み)
 * AWS S3を使った本番環境でのプロフィール画像投稿機能
+* DM(ダイレクトメッセージ)機能
 
 # Requirement
 
