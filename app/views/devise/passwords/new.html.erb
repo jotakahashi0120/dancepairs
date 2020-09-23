@@ -1,21 +1,19 @@
-<div class="text-center">
-  <div class="form-signin">
-    <img class="mb-4" src="/assets/dance-latin.jpg" alt="パスワード再設定画面画像" width="270" height="180">
-    <h1 class="h3 mb-3 font-weight-normal">パスワード再設定</h1>
-    
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
-    
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-      </div>
-    
-      <div class="actions">
-        <%= f.submit "送信する", class: "btn btn-lg btn-primary" %>
-      </div>
-    <% end %>
-    
-    <%#= render "devise/shared/links" %>
-  </div>
+<div class="jumbotron text-center jumbotron-sign">
+  <img class="mb-4" src="/assets/top.jpg" alt="パスワード再設定画面画像" width="270" height="180">
+  <h1 class="h3 mb-3 font-weight-normal">パスワード再設定</h1>
+  
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+  
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+    </div>
+  
+    <div class="actions">
+      <%= f.submit "送信する", class: "btn btn-lg btn-primary" %>
+    </div>
+  <% end %>
+  
+  <%#= render "devise/shared/links" %>
 </div>
