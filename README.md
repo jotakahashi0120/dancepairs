@@ -4,10 +4,10 @@
 
 # DEMO
 
-![トップページ](.app/assets/images/dancepairs-top.jpg)
-![ユーザー一覧ページ](.app/assets/images/dancepairs-index.jpg)
-![ユーザー詳細ページ](.app/assets/images/dancepairs-user-show.jpg)
-![ログインページ](.app/assets/images/dancepairs-login.jpg)
+![トップページ](./app/assets/images/dancepairs-top.jpg)
+![ユーザー一覧ページ](./app/assets/images/dancepairs-index.jpg)
+![ユーザー詳細ページ](./app/assets/images/dancepairs-user-show.jpg)
+![ログインページ](./app/assets/images/dancepairs-login.jpg)
 
 # Features
 
