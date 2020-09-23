@@ -12,6 +12,8 @@ gem 'bootstrap-sass', '3.4.1'
 gem 'devise'
 gem 'refile', require: "refile/rails", github: "manfe/refile"
 gem 'refile-mini_magick'
+gem 'refile-s3'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'sqlite3', '1.4.1'
