@@ -1,33 +1,31 @@
-<div class="text-center">
-  <div class="form-signin">
-    <img class="mb-4" src="/assets/top.jpg" alt="ログイン画面画像" width="270" height="180">
-    <h1 class="h3 mb-3 font-weight-normal">ログイン</h1>
+<div class="jumbotron text-center">
+  <img class="mb-4" src="/assets/top.jpg" alt="ログイン画面画像" width="270" height="180">
+  <h1 class="h3 mb-3 font-weight-normal">ログイン</h1>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <%= f.label :email, "メールアドレス" %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+    </div>
   
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <%= f.label :password, "パスワード" %><br />
+      <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+    </div>
+  
+    <% if devise_mapping.rememberable? %>
       <div class="field">
-        <%= f.label :email, "メールアドレス" %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-      </div>
-    
-      <div class="field">
-        <%= f.label :password, "パスワード" %><br />
-        <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
-      </div>
-    
-      <% if devise_mapping.rememberable? %>
-        <div class="field">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me, "ログインしたままにする" %>
-        </div>
-      <% end %>
-    
-      <div class="actions">
-        <%= f.submit "ログイン", class: "btn btn-lg btn-primary btn-block" %>
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me, "ログインしたままにする" %>
       </div>
     <% end %>
-    
-    <p>パスワードをお忘れのかたはこちら</p>
-    <%= render "devise/shared/links" %>
-    <p class="mt-5 mb-3 text-muted" id="copyright">© 2020 ダンスペアズ All Rights Reserved.</p>
-  </div>
+  
+    <div class="actions">
+      <%= f.submit "ログイン", class: "btn btn-lg btn-primary btn-block" %>
+    </div>
+  <% end %>
+  
+  <p>パスワードをお忘れのかたはこちら</p>
+  <%= render "devise/shared/links" %>
+  <p class="mt-5 mb-3 text-muted" id="copyright">© 2020 ダンスペアズ All Rights Reserved.</p>
 </div>

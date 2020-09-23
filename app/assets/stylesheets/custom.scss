@@ -33,12 +33,6 @@ body {
 
 // サインイン・サインアップフォームここから
 
-.form-signin {
-  max-width: 300px;
-  padding: 15px;
-  margin: auto;
-}
-
 .actions {
   margin: 25px;
 }
@@ -58,7 +52,7 @@ body {
 
 .jumbotron-extend {
   position: relative;
-  height: 100vh;
+  height: 600px;
   min-height: 300px;
   margin-top: 20px;
   background: image-url('top.jpg');
