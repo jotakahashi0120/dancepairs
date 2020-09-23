@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, only: [:show, :edit, :update, :destroy]
   
   def index
     @users = User.all.order(updated_at: :desc)
@@ -16,6 +16,35 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    # roomがcreateされた時に、現在ログインしているユーザーと、
+    # 「チャットへ」を押されたユーザーの両方をEntriesテーブルに記録する必要がある
+    
+    # 自分(current_user)が参加しているメッセージルーム情報を取得する
+    @currentUserEntry=Entry.where(user_id: current_user.id)
+    # 選択したユーザのメッセージルーム情報を取得する
+    @userEntry=Entry.where(user_id: @user.id)
+    
+    # 自分(current_user)と選択したユーザ間に共通のメッセージルームが存在すればフラグを立てる
+    
+    # 選択したユーザーidと自分(current_user)のidが異なるとき
+    if @user.id == current_user.id
+    else
+      @currentUserEntry.each do |cu|
+        @userEntry.each do |u|
+          # 2つのブロック引数の中に同じRoom_idがあるかを確認
+          if cu.room_id == u.room_id then
+            @isRoom = true
+            @roomId = cu.room_id
+          end
+        end
+      end
+      # もし2つのEntryに同じroom_idが見つからない場合新しくRoomとEntryを作る
+      if @isRoom
+      else
+        @room = Room.new
+        @entry = Entry.new
+      end
+    end
   end
 
   def edit
