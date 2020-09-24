@@ -8,6 +8,7 @@
 ![ユーザー一覧ページ](./app/assets/images/dancepairs-index.jpg)
 ![ユーザー詳細ページ](./app/assets/images/dancepairs-user-show.jpg)
 ![ログインページ](./app/assets/images/dancepairs-login.jpg)
+![メッセージページ](./app/assets/images/dancepairs-message.jpg)
 
 # Features
 
