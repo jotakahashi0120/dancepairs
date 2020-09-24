@@ -1,26 +1,45 @@
-<h1>DM</h1>
-
-<h4>参加者</h4>
-<% @entries.each do |e| %>
-  <h5><strong><a href="/users/<%= e.user.id %>"><%= e.user.username%></a></strong></h5>
-<% end %>
-
-<hr>
-<% if @messages.present? %>
-  <% @messages.each do |m| %>
-    <strong><%= m.content %></strong>
-    <small>by <strong><a href="/users/<%= m.user_id %>"><%= m.user.username %></a></strong></small>
-    <hr>
-  <% end %>
-<% else %>
-  <h3 class="text-center">メッセージはまだありません</h3>
-<% end %>
-
-<%= form_for @message do |f| %>
-  <%= f.text_field :content, :placeholder => "メッセージを入力して下さい" , :size => 70 %>
-  <%= f.hidden_field :room_id, :value => @room.id %>
-  <br>
-  <%= f.submit "投稿する" %>
-<% end %>
-
-<%= link_to "ユーザー一覧に戻る", users_path %>
+<h1 class="text-center">メッセージ</h1>
+<div class="jumbotron text-center">
+  <div class="row">
+    <h4>参加者</h4>
+    <div class="card-deck">
+      <% @entries.each do |e| %>
+        <div class="col-sm-6">
+          <div class="card bg-info">
+            <%= attachment_image_tag e.user, :profile_image, fallback: "no-image.png", class: "card-img-top img-thumbnail" %>
+            <div class="card-body">
+              <h5 class="card-title"><strong><a href="/users/<%= e.user.id %>" class="card-title"><%= e.user.username%></a></strong></h5>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    
+    <table class="table table-bordered">
+      <tbody>
+        <% if @messages.present? %>
+          <% @messages.each do |m| %>
+            <tr class="bg-success">
+              <td style="width:75%">
+                <strong><%= m.content %></strong><small>(<%= m.created_at %>)</small>
+              </td>
+              <td style="width:25%">
+                <small>by <strong><a href="/users/<%= m.user_id %>"><%= m.user.username %></a></strong></small>
+              </td>
+            </tr>
+          <% end %>
+        <% else %>
+          <h3 class="text-center">メッセージはまだありません</h3>
+        <% end %>
+      </tbody>
+    </table>
+    
+    <%= form_for @message do |f| %>
+      <%= f.text_area :content, :placeholder => "メッセージを入力して下さい", rows: 5, class: "form-control", id: "message-form" %>
+      <%= f.hidden_field :room_id, :value => @room.id %>
+      <br>
+      <%= f.submit "投稿する", class: "btn btn-primary my-2", id: "submit-btn" %>
+      <%= link_to "戻る", users_path, class: "btn btn-danger my-2", id: "back-btn" %>
+    <% end %>
+  </div>
+</div>
