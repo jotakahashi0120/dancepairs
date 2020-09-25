@@ -1,8 +1,17 @@
 <header class="navbar navbar-fixed-top navbar-default">
   <div class="container">
-    <%= link_to "ダンスペアズ", root_url, id: "logo" %>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "ダンスペアズ", root_url, id: "logo" %>
+    </div>
+    
     <nav>
-      <ul class="nav navbar-nav navbar-right">
+      <ul id="navbar" class="nav navbar-nav navbar-right navbar-collapse collapse">
         <li><%= link_to "ペアを探す！", users_path %></li>
         <% if user_signed_in? %>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
@@ -12,5 +21,6 @@
         <% end %>
       </ul>
     </nav>
+    
   </div>
 </header>
