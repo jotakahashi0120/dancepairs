@@ -77,6 +77,7 @@ https://dancepairs.herokuapp.com/
 # License
 
 © 2020 ダンスペアズ All Rights Reserved.
+[MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
 
 # References
 
