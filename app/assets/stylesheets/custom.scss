@@ -125,8 +125,15 @@ body {
 }
 
 .table {
-  width: 90%;
   margin: 30px auto 0 auto; 
+}
+
+.width-90per {
+  width: 90%;
+}
+
+.white-space-pre-wrap {
+  white-space: pre-wrap;
 }
 
 // メッセージ画面ここまで

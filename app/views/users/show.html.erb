@@ -12,7 +12,7 @@
         <ul class="list-group list-group-flush text-left">
           <li class="list-group-item">性別：<%= @user.gender %></li>
           <li class="list-group-item">住所：<%= @user.prefecture %></li>
-          <li class="list-group-item">プロフィール：<br><%= @user.profile %></li>
+          <li class="list-group-item white-space-pre-wrap">プロフィール：<br><%= @user.profile %></li>
         </ul>
       </div>
       <% if @user.id == current_user.id %>

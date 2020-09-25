@@ -15,13 +15,13 @@
       <% end %>
     </div>
     
-    <table class="table table-bordered">
+    <table class="table table-bordered width-90per">
       <tbody>
         <% if @messages.present? %>
           <% @messages.each do |m| %>
             <tr class="bg-success">
               <td style="width:75%">
-                <strong><%= m.content %></strong><br><small>(<%= m.created_at.strftime("%Y-%m-%d %H:%M") %>)</small>
+                <strong class="white-space-pre-wrap"><%= m.content %></strong><br><small>(<%= m.created_at.strftime("%Y-%m-%d %H:%M") %>)</small>
               </td>
               <td style="width:25%">
                 <small>by <strong><a href="/users/<%= m.user_id %>"><%= m.user.username %></a></strong></small>
